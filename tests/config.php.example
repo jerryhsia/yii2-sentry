@@ -1,0 +1,16 @@
+<?php
+// Copy this file to config.php.
+
+return [
+    'dsn' => '',// Fill your sentry dsn.
+    'options' => [
+        'exclude' => [
+            'yii\web\NotFoundHttpException',
+            'yii\web\UnauthorizedHttpException',
+            'yii\web\BadRequestHttpException',
+            'yii\web\GoneHttpException',
+            'yii\web\ForbiddenHttpException',
+            'yii\web\MethodNotAllowedHttpException'
+        ]
+    ]
+];

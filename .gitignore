@@ -1,0 +1,6 @@
+vendor
+.idea
+._*
+*.swp
+composer.lock
+tests/config.php

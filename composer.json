@@ -1,0 +1,34 @@
+{
+    "name": "jerryhsia/yii2-sentry",
+    "description": "Sentry for yii2 framework",
+    "homepage": "https://github.com/jerryhsia/yii2-sentry",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jerry Hsia",
+            "email": "jerry@xiajie.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "sentry/sentry": "1.6.*",
+        "yiisoft/yii2": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "jerryhsia\\": ""
+        }
+    },
+    "extra": {
+        "writable": [
+            "output"
+        ],
+        "executable": [
+            "run-test"
+        ]
+    }
+}
