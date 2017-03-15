@@ -1,7 +1,6 @@
 <?php
-namespace jerryhsia\sentry\web;
+namespace jerryhsia\sentry;
 
-use jerryhsia\sentry\Sentry;
 use yii\web\Application;
 
 class ErrorHandler extends \yii\web\ErrorHandler
