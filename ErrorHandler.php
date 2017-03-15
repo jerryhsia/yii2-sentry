@@ -6,6 +6,7 @@ use yii\web\Application;
 class ErrorHandler extends \yii\web\ErrorHandler
 {
     public $sentryName = 'sentry';
+    public $enable = true;
 
     public function renderException($exception)
     {
@@ -19,6 +20,10 @@ class ErrorHandler extends \yii\web\ErrorHandler
 
     protected function send($exception)
     {
+        if (!$this->enable) {
+            return false;
+        }
+
         /**
          * @var $sentry Sentry
          */
@@ -26,6 +31,8 @@ class ErrorHandler extends \yii\web\ErrorHandler
         if ($sentry && $sentry instanceof Sentry) {
             $sentry->getClient()->captureException($exception);
         }
+
+        return true;
     }
 
     /**
@@ -33,8 +40,8 @@ class ErrorHandler extends \yii\web\ErrorHandler
      */
     protected function renderConsole($exception)
     {
-        echo $exception->getMessage();
-        echo "\n";
+        echo get_class($exception).':'.$exception->getMessage();
+        echo "\n\n";
         echo $exception->getTraceAsString();
     }
 }
